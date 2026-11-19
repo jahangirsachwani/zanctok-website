@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /forms/
+Sitemap: https://www.zanctok.com/sitemap.xml

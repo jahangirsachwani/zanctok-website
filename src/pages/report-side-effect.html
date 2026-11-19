@@ -1,0 +1,80 @@
+<!--
+title: Report a Side Effect (Pharmacovigilance) | Zanctok Pharmaceutical Laboratories
+description: Report a suspected side effect or adverse drug reaction to a Zanctok Pharmaceutical Laboratories product. All reports are handled confidentially.
+nav: quality
+-->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a>/<span aria-current="page">Report a Side Effect</span></nav>
+    <span class="eyebrow light">Pharmacovigilance</span>
+    <h1>Report a suspected side effect</h1>
+    <p>Patient safety is our highest priority. If you or someone you care for has experienced a side effect with a Zanctok product, please let us know. All reports are treated confidentially.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split" style="align-items:start">
+    <div data-reveal="left">
+      <div class="notice" style="margin:0 0 26px;background:var(--red-soft);border-color:#F6C9CB;color:#7A1418"><svg class="ic" style="color:var(--red)"><use href="#i-alert"/></svg><span><b>In a medical emergency</b>, contact your doctor or go to the nearest hospital immediately. This form is not monitored around the clock.</span></div>
+      <span class="eyebrow">Why reporting matters</span>
+      <h2 class="h2" style="margin-bottom:18px">Every report helps make medicines safer</h2>
+      <div class="prose">
+        <p>Side-effect reports help us and the regulatory authorities continuously monitor the safety of medicines. You don't need to be certain the medicine caused the reaction — a suspicion is enough to report.</p>
+        <p>Healthcare professionals and patients can also report directly to the <strong>Drug Regulatory Authority of Pakistan (DRAP)</strong> through its pharmacovigilance reporting channels.</p>
+      </div>
+      <ul class="checks">
+        <li><svg class="ic"><use href="#i-check"/></svg>Reports are handled confidentially by our safety team</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>We may contact you for follow-up information</li>
+        <li><svg class="ic"><use href="#i-check"/></svg>You can also call us on <a href="tel:+923312266602" style="color:var(--blue);font-weight:600">+92 331 2266602</a></li>
+      </ul>
+    </div>
+
+    <div data-reveal="right">
+      <form class="form-card" action="forms/submit.php" method="post" data-ajax novalidate>
+        <h3 style="font-size:22px;margin-bottom:6px">Adverse event report</h3>
+        <p class="muted" style="margin-bottom:24px;font-size:14.5px">Fields marked <span style="color:var(--red)">*</span> are required.</p>
+        <input type="hidden" name="form_type" value="side_effect">
+        <input type="hidden" name="_ts" value="">
+        <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="fgrid">
+          <div class="fieldset" style="margin:0;padding:0;border:0"><h3>About you</h3><p>So that we can follow up if needed.</p></div>
+          <div class="field"><label for="r-role">I am a <span class="req">*</span></label>
+            <select id="r-role" name="reporter_role" required><option value="">Select…</option><option>Patient</option><option>Family member / carer</option><option>Doctor</option><option>Pharmacist</option><option>Nurse / other healthcare professional</option></select></div>
+          <div class="field"><label for="r-name">Your name <span class="req">*</span></label><input id="r-name" name="name" required maxlength="100" autocomplete="name"></div>
+          <div class="field"><label for="r-phone">Phone <span class="req">*</span></label><input id="r-phone" type="tel" name="phone" required maxlength="30" autocomplete="tel"></div>
+          <div class="field"><label for="r-email">Email</label><input id="r-email" type="email" name="email" maxlength="150" autocomplete="email"></div>
+
+          <div class="fieldset"><h3>The patient</h3><p>No full name needed — initials are enough.</p></div>
+          <div class="field"><label for="r-pi">Patient initials</label><input id="r-pi" name="patient_initials" maxlength="10"></div>
+          <div class="field"><label for="r-age">Age</label><input id="r-age" name="patient_age" maxlength="10" inputmode="numeric"></div>
+          <div class="field"><label for="r-sex">Sex</label><select id="r-sex" name="patient_sex"><option value="">Prefer not to say</option><option>Male</option><option>Female</option></select></div>
+          <div class="field"><label for="r-wt">Weight (kg)</label><input id="r-wt" name="patient_weight" maxlength="10" inputmode="decimal"></div>
+
+          <div class="fieldset"><h3>The medicine</h3><p>Batch number and expiry are printed on the pack.</p></div>
+          <div class="field"><label for="r-prod">Product name <span class="req">*</span></label><input id="r-prod" name="product" required maxlength="150" placeholder="e.g. ZUFEN Tablet 400mg" list="prodList"><datalist id="prodList"></datalist></div>
+          <div class="field"><label for="r-batch">Batch number</label><input id="r-batch" name="batch" maxlength="40"></div>
+          <div class="field"><label for="r-dose">Dose &amp; frequency</label><input id="r-dose" name="dose" maxlength="100" placeholder="e.g. 1 tablet twice daily"></div>
+          <div class="field"><label for="r-start">Date started</label><input id="r-start" type="date" name="date_started"></div>
+
+          <div class="fieldset"><h3>The side effect</h3></div>
+          <div class="field full"><label for="r-desc">What happened? <span class="req">*</span></label><textarea id="r-desc" name="message" required maxlength="4000" placeholder="Describe the reaction, when it started, and what was done…"></textarea></div>
+          <div class="field"><label for="r-onset">Date reaction started</label><input id="r-onset" type="date" name="date_onset"></div>
+          <div class="field"><label for="r-outcome">Current status</label><select id="r-outcome" name="outcome"><option value="">Select…</option><option>Recovered</option><option>Recovering</option><option>Not yet recovered</option><option>Required hospitalisation</option><option>Unknown</option></select></div>
+          <div class="field full"><label for="r-other">Other medicines taken at the same time</label><input id="r-other" name="other_medicines" maxlength="500"></div>
+          <label class="consent field full" style="flex-direction:row"><input type="checkbox" name="consent" required> <span>I consent to Zanctok processing this information for pharmacovigilance and sharing it with regulatory authorities where required, as described in the <a href="privacy.html" style="text-decoration:underline">Privacy Policy</a>.</span></label>
+          <div class="field full"><button class="btn btn-primary" type="submit">Submit Report <svg class="ic"><use href="#i-arrow"/></svg></button><div class="form-status" role="status"></div></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<script src="assets/js/products-data.js" defer></script>
+<script src="assets/js/catalogue.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var dl = document.getElementById('prodList');
+    if (window.ZPL) dl.innerHTML = window.ZPL.PRODUCTS.map(function (p) { return '<option value="' + p.name.replace(/"/g, '&quot;') + '">'; }).join('');
+    var pr = new URLSearchParams(location.search).get('product');
+    if (pr) document.getElementById('r-prod').value = pr;
+  });
+</script>

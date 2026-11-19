@@ -1,0 +1,40 @@
+<!--
+title: Products Catalogue | Zanctok Pharmaceutical Laboratories
+description: Search ZPL's full catalogue of registered tablets, capsules, syrups, suspensions, ointments, psychotropics and cephalosporins by brand, generic name or therapeutic area.
+nav: products
+-->
+<section class="page-hero">
+  <div class="bg" style="background-image:url('https://www.zanctok.com/images/Zanctok%20Products%20Shelf%204K%2001.jpg')"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a>/<span aria-current="page">Products</span></nav>
+    <span class="eyebrow light">Product catalogue</span>
+    <h1>Our product range</h1>
+    <p><span data-total-products>138</span> registered products across 11 manufacturing ranges. Search by brand, generic name, therapeutic class or DRAP registration number.</p>
+  </div>
+</section>
+
+<div class="cat-tools">
+  <div class="wrap">
+    <div class="cat-row">
+      <label class="search"><span class="sr-only" style="position:absolute;left:-9999px">Search products</span>
+        <svg class="ic"><use href="#i-search"/></svg>
+        <input id="q" type="search" placeholder="Search e.g. Cefixime, ZUFEN, antihypertensive…" autocomplete="off">
+      </label>
+      <select id="area" class="select" aria-label="Therapeutic area"></select>
+      <a class="btn btn-ghost no-print" href="https://www.zanctok.com/downloadbutton_getfile.php?file=./Links/ZCP%20Complete%20Product%20List%2004112025.pdf"><svg class="ic"><use href="#i-download"/></svg>PDF</a>
+      <button class="btn btn-ghost no-print" onclick="window.print()" type="button"><svg class="ic"><use href="#i-print"/></svg>Print</button>
+    </div>
+    <div class="chips" id="chips" role="toolbar" aria-label="Manufacturing range"></div>
+  </div>
+</div>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="cat-meta"><span id="count" aria-live="polite"></span><button class="link" id="reset" type="button" style="background:none;border:0;cursor:pointer">Clear filters</button></div>
+    <div class="pgrid" id="pgrid"></div>
+    <div class="notice" style="margin-top:40px"><svg class="ic"><use href="#i-alert"/></svg><span>Product information is intended for healthcare professionals. Medicines should be used only as prescribed by a registered medical practitioner. Some products are supplied on demand.</span></div>
+  </div>
+</section>
+
+<script src="assets/js/products-data.js" defer></script>
+<script src="assets/js/catalogue.js" defer></script>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zanctok Redesign — Design Sample</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1F44; --blue:#1B3E91; --blue-600:#2550C0; --sky:#E8EFFC;
+  --red:#E21F26; --teal:#0FA3B1; --mint:#E6F7F8;
+  --ink:#0E1A2B; --muted:#5B6B82; --line:#E3E9F2; --bg:#F5F8FC; --white:#fff;
+  --r:18px; --shadow:0 20px 50px -20px rgba(10,31,68,.25);
+  --img:"https://www.zanctok.com/images/";
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+h1,h2,h3,h4{font-family:Manrope,sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font:600 13px Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:.25s}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 25px -10px var(--blue)}
+.btn-primary:hover{background:var(--navy);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--navy);background:#fff}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+
+/* sample label */
+.label{position:fixed;bottom:16px;right:16px;z-index:99;background:var(--navy);color:#fff;font:600 12px Inter;padding:8px 14px;border-radius:999px;opacity:.9}
+
+/* top bar */
+.topbar{background:var(--navy);color:#C9D5EA;font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+.topbar span{margin-right:22px}
+.topbar b{color:#fff;font-weight:500}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo img{height:46px}
+nav{display:flex;gap:30px;font-weight:500;font-size:15px;color:var(--muted)}
+nav a:hover,nav a.on{color:var(--blue)}
+nav a.on{position:relative}
+nav a.on::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--red);border-radius:2px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 500px at 85% -10%,var(--sky),transparent 60%),
+  radial-gradient(600px 400px at 0% 100%,var(--mint),transparent 60%),var(--bg)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding-top:80px;padding-bottom:100px}
+.hero h1{font-size:clamp(38px,5vw,62px);font-weight:800;color:var(--navy);margin:18px 0 22px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:520px}
+.hero .ctas{display:flex;gap:14px;margin:34px 0 40px;flex-wrap:wrap}
+.trust{display:flex;gap:26px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:13px}
+.trust .chip{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--navy)}
+.trust .dot{width:30px;height:30px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--teal)}
+.visual{position:relative;height:520px}
+.visual .main{position:absolute;inset:0 0 60px 50px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+.visual .main img{width:100%;height:100%;object-fit:cover}
+.visual .sub{position:absolute;left:0;bottom:0;width:230px;height:170px;border-radius:22px;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow)}
+.visual .sub img{width:100%;height:100%;object-fit:cover}
+.float{position:absolute;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:14px 18px;display:flex;gap:12px;align-items:center;animation:bob 5s ease-in-out infinite}
+.float .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-family:Manrope}
+.float b{display:block;font-family:Manrope;font-size:18px;color:var(--navy)}
+.float small{color:var(--muted);font-size:12px}
+.f1{top:28px;left:10px}.f1 .ic{background:var(--mint);color:var(--teal)}
+.f2{right:-10px;bottom:110px;animation-delay:-2.5s}.f2 .ic{background:#FDECEC;color:var(--red)}
+@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* stats */
+.stats{margin-top:-56px;position:relative;z-index:2}
+.stats .grid{background:#fff;border-radius:24px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);padding:34px 10px}
+.stat{text-align:center;padding:0 16px;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat b{font-family:Manrope;font-size:42px;font-weight:800;color:var(--blue);display:block;line-height:1}
+.stat b sup{color:var(--red);font-size:24px}
+.stat span{color:var(--muted);font-size:14px}
+
+/* section */
+section.block{padding:110px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:50px;flex-wrap:wrap}
+.head h2{font-size:clamp(30px,3.4vw,44px);color:var(--navy);margin-top:12px;max-width:620px}
+.head p{color:var(--muted);max-width:440px}
+
+/* quality cards */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line);transition:.35s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.card .ph{height:170px;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.card:hover .ph img{transform:scale(1.07)}
+.card .bd{padding:22px}
+.card h3{font-size:19px;color:var(--navy);margin-bottom:8px}
+.card p{font-size:14px;color:var(--muted)}
+.card .more{display:inline-block;margin-top:14px;font-weight:600;font-size:14px;color:var(--blue)}
+
+/* dosage forms */
+.forms{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.forms::before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(var(--blue-600),transparent 70%);opacity:.35;right:-200px;top:-200px}
+.forms .head h2{color:#fff}.forms .head p{color:#A9B8D3}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.form{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px;background:rgba(255,255,255,.04);transition:.3s}
+.form:hover{background:rgba(255,255,255,.09);border-color:var(--teal)}
+.form .n{font-family:Manrope;font-size:13px;color:var(--teal);font-weight:700}
+.form h4{font-size:18px;margin:10px 0 6px}
+.form small{color:#A9B8D3}
+
+/* product sample */
+.psample{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prod{border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff;transition:.3s}
+.prod:hover{border-color:var(--blue);box-shadow:0 12px 30px -18px var(--blue)}
+.prod .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--sky);color:var(--blue)}
+.prod h4{font-size:18px;color:var(--navy);margin:14px 0 4px}
+.prod .gen{font-size:13px;color:var(--muted)}
+.prod .meta{display:flex;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted)}
+.prod .meta b{color:var(--ink);font-weight:600}
+
+.cta{margin:0 auto 110px;background:linear-gradient(120deg,var(--blue),var(--navy));color:#fff;border-radius:28px;padding:60px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.cta h2{font-size:34px;max-width:560px}
+.cta .btn-primary{background:#fff;color:var(--navy)}
+
+@media (max-width:960px){
+  nav{display:none}
+  .hero .wrap{grid-template-columns:1fr;padding-top:50px}
+  .visual{height:400px}
+  .stats .grid{grid-template-columns:repeat(2,1fr);row-gap:26px}
+  .stat:nth-child(2){border:0}
+  .cards,.fgrid{grid-template-columns:repeat(2,1fr)}
+  .psample{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .cards,.fgrid{grid-template-columns:1fr}
+  .topbar .wrap>div:last-child{display:none}
+  .f2{right:0}.visual .sub{width:160px;height:120px}
+  .cta{padding:36px 24px}
+}
+</style>
+</head>
+<body>
+<div class="label">Design sample · not final</div>
+
+<div class="topbar"><div class="wrap">
+  <div><span>☎ <b>+92 331 2266602</b></span><span>✉ <b>zanctokpharma@hotmail.com</b></span></div>
+  <div>Factory F/5, S.I.T.E. Hyderabad, Pakistan</div>
+</div></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#"><img src="https://www.zanctok.com/images/ZPL%20Logo%202025%2d01%2d01.png" alt="Zanctok Pharmaceutical Laboratories"></a>
+  <nav><a class="on" href="#">Home</a><a href="#">About</a><a href="#">Manufacturing</a><a href="#">Quality</a><a href="#">Products</a><a href="#">Contact</a></nav>
+  <a class="btn btn-primary" href="#">Product Catalogue</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Since 1984 · Hyderabad, Pakistan</span>
+    <h1>Your health,<br><em>our promise.</em></h1>
+    <p class="lead">For over four decades, Zanctok Pharmaceutical Laboratories has developed, manufactured and delivered high-quality medicines that improve millions of lives.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#">Explore Products →</a>
+      <a class="btn btn-ghost" href="#">Our Quality Standards</a>
+    </div>
+    <div class="trust">
+      <div class="chip"><span class="dot">✓</span>cGMP Compliant</div>
+      <div class="chip"><span class="dot">✓</span>ISO 9001 · 14001 · 45001</div>
+      <div class="chip"><span class="dot">✓</span>ISO 17025 Lab</div>
+    </div>
+  </div>
+  <div class="visual">
+    <div class="main"><img src="https://www.zanctok.com/images/Manufacturing01.jpg" alt="Tablet packaging line"></div>
+    <div class="sub"><img src="https://www.zanctok.com/images/QC01.jpg" alt="Quality control lab"></div>
+    <div class="float f1"><div class="ic">40+</div><div><b>Years</b><small>of trusted care</small></div></div>
+    <div class="float f2"><div class="ic">100+</div><div><b>Cities</b><small>nationwide reach</small></div></div>
+  </div>
+</div></section>
+
+<div class="stats"><div class="wrap"><div class="grid">
+  <div class="stat"><b>40<sup>+</sup></b><span>Years of excellence</span></div>
+  <div class="stat"><b>138<sup>+</sup></b><span>Registered products</span></div>
+  <div class="stat"><b>100<sup>+</sup></b><span>Cities served</span></div>
+  <div class="stat"><b>28<sup>+</sup></b><span>Institutional partners</span></div>
+</div></div></div>
+
+<section class="block"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Quality at every step</span><h2>Built on cGMP. Proven in every batch.</h2></div>
+    <p>From raw material sourcing to final release, every product passes through rigorous quality systems aligned with WHO and ISO standards.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="ph"><img src="https://www.zanctok.com/images/CGMP01.jpg" alt=""></div><div class="bd"><h3>cGMP Compliance</h3><p>Internationally recognised Current Good Manufacturing Practices across all operations.</p><a class="more" href="#">Learn more →</a></div></div>
+    <div class="card"><div class="ph"><img src="https://www.zanctok.com/images/QO01.jpg" alt=""></div><div class="bd"><h3>Quality Operations</h3><p>State-of-the-art facility at Hyderabad's major industrial hub.</p><a class="more" href="#">Learn more →</a></div></div>
+    <div class="card"><div class="ph"><img src="https://www.zanctok.com/images/Quality%20Control%20Dep.jpg" alt=""></div><div class="bd"><h3>Quality Control</h3><p>Fully equipped laboratory with advanced analytical instruments.</p><a class="more" href="#">Learn more →</a></div></div>
+    <div class="card"><div class="ph"><img src="https://www.zanctok.com/images/QA01.jpg" alt=""></div><div class="bd"><h3>Quality Assurance</h3><p>QMS-driven standards ensuring consistency across every product.</p><a class="more" href="#">Learn more →</a></div></div>
+  </div>
+</div></section>
+
+<section class="block forms"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Manufacturing capabilities</span><h2>Eight dedicated production ranges</h2></div>
+    <p>Solid and liquid oral dosage forms plus topical preparations, manufactured under HVAC-controlled environments.</p>
+  </div>
+  <div class="fgrid">
+    <div class="form"><span class="n">01</span><h4>General Tablets</h4><small>45 products</small></div>
+    <div class="form"><span class="n">02</span><h4>Syrups & Suspensions</h4><small>29 products</small></div>
+    <div class="form"><span class="n">03</span><h4>Ointments & Creams</h4><small>8 products</small></div>
+    <div class="form"><span class="n">04</span><h4>External & Mouthwash</h4><small>9 products</small></div>
+    <div class="form"><span class="n">05</span><h4>Psychotropic</h4><small>7 products</small></div>
+    <div class="form"><span class="n">06</span><h4>Capsules</h4><small>4 products</small></div>
+    <div class="form"><span class="n">07</span><h4>Antibiotics</h4><small>11 products</small></div>
+    <div class="form"><span class="n">08</span><h4>Cephalosporins</h4><small>24 products</small></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Product catalogue</span><h2>Searchable, filterable product range</h2></div>
+    <p>The old long table becomes a fast, mobile-friendly catalogue with search by brand, generic name or therapeutic class.</p>
+  </div>
+  <div class="psample">
+    <div class="prod"><span class="tag">Cephalosporin</span><h4>BRISCEF Capsule 400mg</h4><div class="gen">Cefixime as Trihydrate 400mg</div><div class="meta"><span>Pack <b>5's</b></span><span>Reg # <b>57953</b></span></div></div>
+    <div class="prod"><span class="tag">Tablet</span><h4>TORVAST Tablet 20mg</h4><div class="gen">Atorvastatin · Lipid lowering agent</div><div class="meta"><span>Pack <b>10's</b></span><span>Reg # <b>57966</b></span></div></div>
+    <div class="prod"><span class="tag">Suspension</span><h4>ZANCPAL Suspension</h4><div class="gen">Paracetamol 120mg · Analgesic / Antipyretic</div><div class="meta"><span>Pack <b>60 · 120 · 450 ml</b></span><span>Reg # <b>8351</b></span></div></div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="cta">
+  <h2>Partner with a manufacturer trusted by hospitals across Pakistan.</h2>
+  <a class="btn btn-primary" href="#">Contact Our Team →</a>
+</div></div>
+</body>
+</html>

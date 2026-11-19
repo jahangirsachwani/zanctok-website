@@ -1,0 +1,69 @@
+<!--
+title: Partner With Us — Distributors & Tenders | Zanctok Pharmaceutical Laboratories
+description: Become a ZPL distributor or send an institutional supply / tender enquiry to Zanctok Pharmaceutical Laboratories.
+nav: partner
+-->
+<section class="page-hero">
+  <div class="bg" style="background-image:url('https://www.zanctok.com/images/DistributionNetwork.jpg')"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a>/<span aria-current="page">Partner With Us</span></nav>
+    <span class="eyebrow light">Partnerships</span>
+    <h1>Grow with Zanctok</h1>
+    <p>We work with distributors, hospitals, health departments and NGOs across Pakistan. Tell us about your requirements.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split" style="align-items:start">
+    <div data-reveal="left">
+      <span class="eyebrow">Why partner with ZPL</span>
+      <h2 class="h2" style="margin-bottom:26px">A dependable supply partner</h2>
+      <div class="contact-cards">
+        <div class="ccard"><div class="fi"><svg class="ic"><use href="#i-pill"/></svg></div><div><h4>Broad portfolio</h4><p><span data-total-products>138</span> registered products across 11 ranges and 8 therapeutic areas.</p></div></div>
+        <div class="ccard"><div class="fi"><svg class="ic"><use href="#i-shield"/></svg></div><div><h4>Certified quality</h4><p>cGMP licence plus ISO 9001, 14001, 45001 and 17025 certifications.</p></div></div>
+        <div class="ccard"><div class="fi"><svg class="ic"><use href="#i-truck"/></svg></div><div><h4>Reliable delivery</h4><p>Distribution to 100+ cities and experience with public-sector tenders.</p></div></div>
+        <div class="ccard"><div class="fi"><svg class="ic"><use href="#i-clip"/></svg></div><div><h4>Tender documentation</h4><p>Licences, certificates and product registrations available on request.</p></div></div>
+      </div>
+    </div>
+
+    <div data-reveal="right">
+      <form class="form-card" action="forms/submit.php" method="post" data-ajax novalidate>
+        <h3 style="font-size:22px;margin-bottom:6px">Partnership enquiry</h3>
+        <p class="muted" style="margin-bottom:24px;font-size:14.5px">Fields marked <span style="color:var(--red)">*</span> are required.</p>
+        <input type="hidden" name="form_type" value="partner">
+        <input type="hidden" name="_ts" value="">
+        <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="fgrid">
+          <div class="field full"><label for="p-type">Enquiry type <span class="req">*</span></label>
+            <select id="p-type" name="enquiry_type" required>
+              <option value="distributor">Become a distributor</option>
+              <option value="tender">Institutional supply / tender</option>
+              <option value="hospital">Hospital or pharmacy supply</option>
+              <option value="product">Product enquiry</option>
+              <option value="other">Other</option>
+            </select></div>
+          <div class="field"><label for="p-name">Contact person <span class="req">*</span></label><input id="p-name" name="name" required maxlength="100" autocomplete="name"></div>
+          <div class="field"><label for="p-org">Organisation <span class="req">*</span></label><input id="p-org" name="organisation" required maxlength="150" autocomplete="organization"></div>
+          <div class="field"><label for="p-email">Email <span class="req">*</span></label><input id="p-email" type="email" name="email" required maxlength="150" autocomplete="email"></div>
+          <div class="field"><label for="p-phone">Phone / WhatsApp <span class="req">*</span></label><input id="p-phone" type="tel" name="phone" required maxlength="30" autocomplete="tel"></div>
+          <div class="field"><label for="p-city">City <span class="req">*</span></label><input id="p-city" name="city" required maxlength="80" autocomplete="address-level2"></div>
+          <div class="field"><label for="p-product">Products of interest</label><input id="p-product" name="products" maxlength="300" placeholder="e.g. Cephalosporins, ZUFEN"></div>
+          <div class="field full"><label for="p-msg">Requirements <span class="req">*</span></label><textarea id="p-msg" name="message" required maxlength="3000" placeholder="Coverage area, expected volumes, tender reference, delivery timelines…"></textarea></div>
+          <label class="consent field full" style="flex-direction:row"><input type="checkbox" name="consent" required> <span>I agree that Zanctok may use these details to respond to my enquiry, as described in the <a href="privacy.html" style="text-decoration:underline">Privacy Policy</a>.</span></label>
+          <div class="field full"><button class="btn btn-primary" type="submit">Submit Enquiry <svg class="ic"><use href="#i-arrow"/></svg></button><div class="form-status" role="status"></div></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+  (function () {
+    var p = new URLSearchParams(location.search);
+    document.addEventListener('DOMContentLoaded', function () {
+      if (p.get('product')) { document.getElementById('p-product').value = p.get('product'); document.getElementById('p-type').value = 'product'; }
+      if (p.get('type')) { document.getElementById('p-type').value = p.get('type'); }
+    });
+  })();
+</script>
+<script src="assets/js/products-data.js" defer></script>
+<script src="assets/js/catalogue.js" defer></script>
